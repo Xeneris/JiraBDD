@@ -33,10 +33,9 @@ public class DriverManager {
         browserType = ConfigReader.getBrowserType();
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
-        chromeOptions.addArguments("--window-size=1920,1080");
+        chromeOptions.addArguments("start-maximized");
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
 
@@ -64,8 +63,8 @@ public class DriverManager {
 
         if (driver != null) {
             wait = new FluentWait<>(driver)
-                    .withTimeout(Duration.ofSeconds(30))
-                    .pollingEvery(Duration.ofSeconds(5))
+                    .withTimeout(Duration.ofSeconds(10))
+                    .pollingEvery(Duration.ofSeconds(2))
                     .ignoring(NoSuchElementException.class);
         }
     }

@@ -2,6 +2,7 @@ package StepDefinitions;
 import CreateIssue.CreateIssue;
 import IssuePage.IssuePage;
 import NavBarPage.NavBarPage;
+import ProjectPage.ProjectPage;
 import RootPage.RootPage;
 import LoginPage.LoginPage;
 import io.cucumber.java.After;
@@ -24,6 +25,7 @@ public class CreateIssueSteps {
     private NavBarPage navBarPage;
     private CreateIssue createIssue;
     private IssuePage issuePage;
+    private ProjectPage projectPage;
 
     @Before
     public void SetUp() throws IOException {
@@ -32,6 +34,7 @@ public class CreateIssueSteps {
         navBarPage = new NavBarPage(driverManager.getDriver(), driverManager.getWait());
         createIssue = new CreateIssue(driverManager.getDriver(),driverManager.getWait());
         issuePage = new IssuePage(driverManager.getDriver(), driverManager.getWait());
+        projectPage = new ProjectPage(driverManager.getDriver(),driverManager.getWait());
     }
 
     @After
@@ -74,6 +77,17 @@ public class CreateIssueSteps {
         String summ = issuePage.getSummary();
 
         Assert.assertEquals(summ, summary);
+    }
+
+    @When("I redirect to the given {string}")
+    public void i_redirect_to_the_given(String string) {
+        driverManager.goTo(string);
+    }
+    @Then("The key on the right side of the page matches {string}")
+    public void the_key_on_the_right_side_of_the_page_matches(String string) {
+        var projKey = projectPage.getProjectKey();
+
+        Assert.assertEquals(projKey, string);
     }
 
 

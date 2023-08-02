@@ -14,23 +14,23 @@ I used mostly Java, for the BDD part I used Cucumber and Gherkin
 
 # Login
 
-Successful login
-Unsuccessful login
-Captcha popup
+- Successful login
+- Unsuccessful login
+- Captcha popup
 
 # Logout
 
-Successful logout
+- Successful logout
 
 # Browse Project feature
 
-Browse given projects
+- Browse given projects
 
 # Create Issue
 
-Create multiple types of issues
-Is the issue created
-Does the issue summary match the one we gave
+- Create multiple types of issues
+- Is the issue created
+- Does the issue summary match the one we gave
 
 # Feedback and Support
 

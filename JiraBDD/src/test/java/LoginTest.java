@@ -1,5 +1,5 @@
 import LoginPage.LoginPage;
-import NavBarPage.NavBarPage;
+import NavBar.NavBar;
 import DriverManager.DriverManager;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoginTest {
 
-    private NavBarPage navBarPage;
+    private NavBar navBar;
     private LoginPage loginPage;
     private Sheet sheet1;
     private String errorMessage = "Sorry, your username and password are incorrect - please try again.";
@@ -27,7 +27,7 @@ public class LoginTest {
         driverManager = new DriverManager();
 
         loginPage = new LoginPage(driverManager.getDriver(), driverManager.getWait());
-        navBarPage = new NavBarPage(driverManager.getDriver(), driverManager.getWait());
+        navBar = new NavBar(driverManager.getDriver(), driverManager.getWait());
 
         FileInputStream fis = new FileInputStream(new File("\\F:\\TW3\\Nevtelen_tablazat.xlsx\\"));
         Workbook workbook = new XSSFWorkbook(fis);
@@ -45,9 +45,9 @@ public class LoginTest {
 
         loginPage.successfulLogIn();
 
-        navBarPage.clickToAvatarIcon();
+        navBar.clickToAvatarIcon();
 
-        navBarPage.clickToProfileOption();
+        navBar.clickToProfileOption();
 
         assertEquals(loginPage.getUserName(), "automation48");
     }

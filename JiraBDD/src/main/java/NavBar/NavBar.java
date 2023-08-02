@@ -1,4 +1,4 @@
-package NavBarPage;
+package NavBar;
 
 import RootPage.RootPage;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 
-public class NavBarPage extends RootPage {
+public class NavBar extends RootPage {
 
     @FindBy(xpath = "//a[@id='header-details-user-fullname']")
     private WebElement avatarIcon;
@@ -21,7 +21,7 @@ public class NavBarPage extends RootPage {
     @FindBy(xpath = "//a[@id='create_link']")
     private WebElement createButton;
 
-    public NavBarPage(WebDriver driver, Wait<WebDriver> wait) {
+    public NavBar(WebDriver driver, Wait<WebDriver> wait) {
         super(driver, wait);
     }
 

@@ -1,7 +1,7 @@
 package StepDefinitions;
 import CreateIssue.CreateIssue;
 import IssuePage.IssuePage;
-import NavBarPage.NavBarPage;
+import NavBar.NavBar;
 import ProjectPage.ProjectPage;
 import RootPage.RootPage;
 import LoginPage.LoginPage;
@@ -22,7 +22,7 @@ public class CreateIssueSteps {
     private DriverManager driverManager;
     private RootPage rootPage;
     private LoginPage loginPage;
-    private NavBarPage navBarPage;
+    private NavBar navBar;
     private CreateIssue createIssue;
     private IssuePage issuePage;
     private ProjectPage projectPage;
@@ -31,7 +31,7 @@ public class CreateIssueSteps {
     public void SetUp() throws IOException {
         driverManager = new DriverManager();
         loginPage = new LoginPage(driverManager.getDriver(), driverManager.getWait());
-        navBarPage = new NavBarPage(driverManager.getDriver(), driverManager.getWait());
+        navBar = new NavBar(driverManager.getDriver(), driverManager.getWait());
         createIssue = new CreateIssue(driverManager.getDriver(),driverManager.getWait());
         issuePage = new IssuePage(driverManager.getDriver(), driverManager.getWait());
         projectPage = new ProjectPage(driverManager.getDriver(),driverManager.getWait());
@@ -49,7 +49,7 @@ public class CreateIssueSteps {
     }
     @When("I click the Create button in the navbar")
     public void i_click_the_create_button_in_the_navbar() {
-        navBarPage.clickToCreateButton();
+        navBar.clickToCreateButton();
     }
     @When("Set project to {string}")
     public void set_project_to_coala_project(String project) throws InterruptedException {

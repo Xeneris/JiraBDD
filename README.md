@@ -12,7 +12,7 @@ I used mostly Java, for the BDD part I used Cucumber and Gherkin
 
 # Tests in the project
 
-# Login:
+# Login
 
 Successful login
 Unsuccessful login

@@ -12,21 +12,20 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import DriverManager.DriverManager;
 import org.junit.Assert;
-
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
 
-public class CreateIssueSteps {
+public class StepDefinition {
 
     private DriverManager driverManager;
-    private RootPage rootPage;
     private LoginPage loginPage;
     private NavBar navBar;
     private CreateIssue createIssue;
     private IssuePage issuePage;
     private ProjectPage projectPage;
 
+
+    //Basic setup and initialization before tests
     @Before
     public void SetUp() throws IOException {
         driverManager = new DriverManager();
@@ -37,11 +36,14 @@ public class CreateIssueSteps {
         projectPage = new ProjectPage(driverManager.getDriver(),driverManager.getWait());
     }
 
+    //Disconnect driver and close browser
     @After
     public void TearDown(){
         driverManager.tearDown();
     }
 
+
+    //These steps are for the CreateIssue test
     @Given("I am logged in with valid credentials")
     public void i_am_logged_in_with_valid_credentials() {
         driverManager.goTo("https://jira-auto.codecool.metastage.net/secure/Dashboard.jspa");
@@ -79,6 +81,8 @@ public class CreateIssueSteps {
         Assert.assertEquals(summ, summary);
     }
 
+
+    //These steps are for the BrowseProject test
     @When("I redirect to the given {string}")
     public void i_redirect_to_the_given(String string) {
         driverManager.goTo(string);

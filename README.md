@@ -32,6 +32,6 @@ Create multiple types of issues
 Is the issue created
 Does the issue summary match the one we gave
 
-#Feedback and Support
+# Feedback and Support
 
 While this project is primarily for reference, as mentioned above, I'm always open for feedbacks that I can learn from and write better code in the future.

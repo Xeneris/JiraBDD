@@ -11,7 +11,7 @@ Feature: Create Issue
     And Set summary to <summary>
     And click the Create button
     And click the popup window on the top right
-    Then I check the summary, which equals <summary>
+    Then I check the summary of the newly created issue, which equals <summary>
 
     Examples:
       | project          | issue   | summary      |

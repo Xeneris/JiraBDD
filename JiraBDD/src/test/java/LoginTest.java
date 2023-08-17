@@ -4,16 +4,14 @@ import DriverManager.DriverManager;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class LoginTest {
 
     private NavBar navBar;
@@ -40,6 +38,7 @@ public class LoginTest {
     }
 
     @Test
+    @Order(1)
     public void successfulLogin() {
         driverManager.goTo("https://jira-auto.codecool.metastage.net/secure/Dashboard.jspa");
 
@@ -53,6 +52,7 @@ public class LoginTest {
     }
 
     @Test
+    @Order(2)
     public void loginWithValidUsernameAndInvalidPassword() {
         String userName = sheet1.getRow(2).getCell(0).toString();
         String password = sheet1.getRow(2).getCell(1).toString();
@@ -70,6 +70,7 @@ public class LoginTest {
     }
 
     @Test
+    @Order(3)
     public void loginWithValidPasswordAndInvalidUsername() {
         String userName = sheet1.getRow(3).getCell(0).toString();
         String password = sheet1.getRow(3).getCell(1).toString();
@@ -85,6 +86,7 @@ public class LoginTest {
     }
 
     @Test
+    @Order(4)
     public void leaveTheLoginFieldEmpty() {
         loginPage.navigateToTheLoginPage();
         loginPage.setUserName("");
@@ -97,6 +99,7 @@ public class LoginTest {
     }
 
     @Test
+    @Order(5)
     public void loginWithValidUsernameAndEmptyPassword() {
         String userName = sheet1.getRow(4).getCell(0).toString();
 
@@ -113,7 +116,8 @@ public class LoginTest {
     }
 
     @Test
-    public void isCaptchaWorksCorrectly(){
+    @Order(6)
+    public void captchaPopsUpSuccessfully(){
         String userName = sheet1.getRow(2).getCell(0).toString();
         String password = sheet1.getRow(2).getCell(1).toString();
 

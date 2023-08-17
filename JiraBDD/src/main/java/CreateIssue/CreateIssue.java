@@ -63,11 +63,6 @@ public class CreateIssue extends RootPage {
         projectInputField.sendKeys(Keys.ENTER);
     }
 
-    public String getSummaryErrorMessage() {
-        wait.until(ExpectedConditions.visibilityOf(summaryErrorMessageOnCreateScreen));
-        return summaryErrorMessageOnCreateScreen.getText();
-    }
-
     public void clickToIssueTypeInputField() {
         wait.until(ExpectedConditions.elementToBeClickable(issueTypeInputField));
         issueTypeInputField.click();
@@ -88,12 +83,6 @@ public class CreateIssue extends RootPage {
         issueTypeInputField.sendKeys(Keys.ENTER);
     }
 
-    public void clearTheSummary(){
-        wait.until(ExpectedConditions.elementToBeClickable(summaryInputFieldOnCreateScreen));
-        summaryInputFieldOnCreateScreen.click();
-        summaryInputFieldOnCreateScreen.clear();
-    }
-
     public void setSummaryOnCreateScreen(String summary) {
         wait.until(ExpectedConditions.elementToBeClickable(summaryInputFieldOnCreateScreen));
         summaryInputFieldOnCreateScreen.sendKeys(summary);
@@ -108,11 +97,6 @@ public class CreateIssue extends RootPage {
         wait.until(ExpectedConditions.invisibilityOf(summaryInputFieldOnCreateScreen));
         wait.until(ExpectedConditions.elementToBeClickable(createIssuePopUp));
         createIssuePopUp.click();
-    }
-
-    public void clickToUpdateButton(){
-        wait.until(ExpectedConditions.visibilityOf(updateIssueButton));
-        updateIssueButton.click();
     }
 
     public void validateTheProject(String project){

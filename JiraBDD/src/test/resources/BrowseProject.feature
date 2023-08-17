@@ -5,7 +5,7 @@ Feature: Browse Project
   @selenium
   Scenario Outline: Browse existing features successfully
     Given I am logged in with valid credentials
-    When I redirect to the given <url>
+    When I navigate to the given <url>
     Then The key on the right side of the page matches <expected_key>
 
     Examples:

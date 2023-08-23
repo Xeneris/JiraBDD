@@ -1,5 +1,5 @@
-import LoginPage.LoginPage;
-import NavBar.NavBar;
+import Pages.LoginPage.LoginPage;
+import Pages.NavBar.NavBar;
 import DriverManager.DriverManager;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class LoginTest {
 
@@ -117,7 +118,7 @@ public class LoginTest {
 
     @Test
     @Order(6)
-    public void captchaPopsUpSuccessfully(){
+    public void captchaPopsUpSuccessfully() {
         String userName = sheet1.getRow(2).getCell(0).toString();
         String password = sheet1.getRow(2).getCell(1).toString();
 
@@ -141,6 +142,6 @@ public class LoginTest {
 
         boolean isCaptchaDisplayed = loginPage.isCaptchaDisplayed();
 
-        assertEquals(isCaptchaDisplayed,true);
+        assertEquals(isCaptchaDisplayed, true);
     }
 }

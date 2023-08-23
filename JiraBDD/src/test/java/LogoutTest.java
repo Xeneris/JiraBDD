@@ -1,7 +1,7 @@
 import DriverManager.DriverManager;
-import LogoutPage.LogoutPage;
-import LoginPage.LoginPage;
-import NavBar.NavBar;
+import Pages.LogoutPage.LogoutPage;
+import Pages.LoginPage.LoginPage;
+import Pages.NavBar.NavBar;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

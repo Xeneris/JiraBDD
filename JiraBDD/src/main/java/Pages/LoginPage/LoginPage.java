@@ -1,6 +1,6 @@
-package LoginPage;
+package Pages.LoginPage;
 
-import RootPage.RootPage;
+import Pages.RootPage.RootPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

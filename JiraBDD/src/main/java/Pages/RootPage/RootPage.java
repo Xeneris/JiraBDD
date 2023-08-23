@@ -1,4 +1,4 @@
-package RootPage;
+package Pages.RootPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

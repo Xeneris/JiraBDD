@@ -1,10 +1,10 @@
 package StepDefinitions;
 
-import CreateIssue.CreateIssue;
-import IssuePage.IssuePage;
-import NavBar.NavBar;
-import ProjectPage.ProjectPage;
-import LoginPage.LoginPage;
+import Pages.CreateIssue.CreateIssue;
+import Pages.IssuePage.IssuePage;
+import Pages.NavBar.NavBar;
+import Pages.ProjectPage;
+import Pages.LoginPage.LoginPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;

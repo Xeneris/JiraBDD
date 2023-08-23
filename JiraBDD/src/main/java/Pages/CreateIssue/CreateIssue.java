@@ -1,6 +1,6 @@
-package CreateIssue;
+package Pages.CreateIssue;
 
-import RootPage.RootPage;
+import Pages.RootPage.RootPage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

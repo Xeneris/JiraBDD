@@ -1,6 +1,6 @@
-package NavBar;
+package Pages.NavBar;
 
-import RootPage.RootPage;
+import Pages.RootPage.RootPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

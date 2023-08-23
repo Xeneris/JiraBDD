@@ -20,6 +20,7 @@ public class LoginTest {
     private Sheet sheet1;
     private String errorMessage = "Sorry, your username and password are incorrect - please try again.";
     private DriverManager driverManager;
+    private String pathName = "\\F:\\TW3\\Nevtelen_tablazat.xlsx\\";
 
     @BeforeEach
     public void SetUp() throws IOException {
@@ -28,7 +29,7 @@ public class LoginTest {
         loginPage = new LoginPage(driverManager.getDriver(), driverManager.getWait());
         navBar = new NavBar(driverManager.getDriver(), driverManager.getWait());
 
-        FileInputStream fis = new FileInputStream(new File("\\F:\\TW3\\Nevtelen_tablazat.xlsx\\"));
+        FileInputStream fis = new FileInputStream(new File(pathName));
         Workbook workbook = new XSSFWorkbook(fis);
         sheet1 = workbook.getSheet("Users");
     }
